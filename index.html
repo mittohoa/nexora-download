@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXORA — Quản lý tài sản thông minh</title>
+  <meta name="description" content="NEXORA: quản lý tài sản, vật tư, kiểm kê và bố trí 3D. Chạy cả khi mất mạng. Tải bản Android và Windows.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f7fb; --surface: #ffffff; --text: #141a2b; --muted: #5a6278; --line: #e1e4ee;
+      --brand: #4f5bd5; --brand-ink: #ffffff; --brand-soft: #e8eaff; --warn: #8a4b00; --warn-bg: #fff3df;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0b1120; --surface: #141b2d; --text: #e8ebf5; --muted: #9aa3bd; --line: #26304a;
+        --brand: #8a93ff; --brand-ink: #0b1120; --brand-soft: #1e2547; --warn: #ffcf8a; --warn-bg: #3a2a10;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0b1120; --surface: #141b2d; --text: #e8ebf5; --muted: #9aa3bd; --line: #26304a;
+      --brand: #8a93ff; --brand-ink: #0b1120; --brand-soft: #1e2547; --warn: #ffcf8a; --warn-bg: #3a2a10;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Be Vietnam Pro", system-ui, sans-serif; }
+    a { color: var(--brand); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 56px 0 32px; text-align: center; }
+    .logo { font-weight: 800; letter-spacing: .3em; font-size: clamp(36px, 8vw, 64px); color: var(--brand); margin: 0; }
+    .tag { color: var(--muted); margin: 4px 0 24px; }
+    h1 { font-size: clamp(24px, 4.5vw, 38px); line-height: 1.25; margin: 0 0 12px; }
+    .lead { color: var(--muted); max-width: 680px; margin: 0 auto 28px; }
+    .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 600;
+      text-decoration: none; border: 1px solid var(--brand); }
+    .btn.primary { background: var(--brand); color: var(--brand-ink); }
+    .btn.ghost { color: var(--brand); background: transparent; }
+    .note { margin: 20px auto 0; max-width: 680px; background: var(--warn-bg); color: var(--warn); border-radius: 12px; padding: 10px 14px; font-size: 14px; }
+    section { padding: 40px 0; }
+    h2 { font-size: 26px; margin: 0 0 20px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .shots { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+    .shots figure { margin: 0; flex: 0 0 220px; scroll-snap-align: start; }
+    .shots img { width: 220px; height: auto; border-radius: 18px; border: 1px solid var(--line); display: block; }
+    .shots figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; text-align: center; }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 15px; }
+    tr:last-child td { border-bottom: 0; }
+    code { background: var(--brand-soft); padding: 1px 6px; border-radius: 6px; font-size: 13px; }
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 560px) { th:nth-child(3), td:nth-child(3) { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <p class="logo">NEXORA</p>
+    <p class="tag">Intelligent Asset Ecosystem</p>
+    <h1>Quản lý tài sản, vật tư và kiểm kê — cả khi mất mạng</h1>
+    <p class="lead">Một ứng dụng cho cả văn phòng, kho và hiện trường: đăng ký tài sản bằng QR, phiếu cấp phát / điều chuyển có duyệt, tồn kho theo lô, kiểm kê bằng camera, thư viện mô hình 3D và bố trí phòng trên mặt bằng.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-android-arm64.apk">⬇ Tải Android (APK)</a>
+      <a class="btn primary" href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-windows-x64.zip">⬇ Tải Windows</a>
+      <a class="btn ghost" href="https://github.com/mittohoa/nexora-download/releases">Tất cả phiên bản</a>
+    </div>
+    <p class="note">Bản thử nghiệm (beta). Cần tài khoản do tổ chức của bạn mời — ứng dụng không cho tự đăng ký.</p>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Tính năng</h2>
+      <div class="grid">
+        <div class="card"><h3>Sổ tài sản + QR</h3><p>Mã tài sản tự sinh, nhãn QR in được, vị trí theo cây (cơ sở → tòa → tầng → phòng), linh kiện lắp trong thiết bị, lịch sử đầy đủ.</p></div>
+        <div class="card"><h3>Phiếu có duyệt</h3><p>Cấp phát, thu hồi, điều chuyển; nhập / xuất / chuyển / điều chỉnh kho. Nháp → gửi → duyệt → hoàn tất, mọi bước đều được ghi vết.</p></div>
+        <div class="card"><h3>Vật tư theo lô</h3><p>Sổ cái chỉ ghi thêm, không âm kho, cảnh báo tồn thấp và lô sắp hết hạn, nhập tồn đầu kỳ từ Excel.</p></div>
+        <div class="card"><h3>Kiểm kê</h3><p>Quét QR bằng camera hoặc máy quét USB, đối chiếu tự động, tạo phiếu điều chuyển cho tài sản sai chỗ.</p></div>
+        <div class="card"><h3>Ngoại tuyến</h3><p>Xem dữ liệu, quét kiểm kê, soạn nháp và phiếu khi mất mạng; tự gửi khi có mạng, không bao giờ âm thầm bỏ thao tác.</p></div>
+        <div class="card"><h3>3D</h3><p>Thư viện mô hình GLB có phiên bản; bố trí tài sản trong phòng trên mặt bằng 2D và xem 3D đúng kích thước thật.</p></div>
+        <div class="card"><h3>Nhập liệu nhanh</h3><p>Nháp có nguồn gốc từng trường, dán cả bảng từ Excel, trường tùy biến theo loại, ảnh đính kèm.</p></div>
+        <div class="card"><h3>Nhiều tổ chức, phân quyền</h3><p>8 vai trò, dữ liệu tách biệt từng tổ chức; AI là tùy chọn và đang tắt mặc định.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hình ảnh</h2>
+      <div class="shots">
+        <figure><img src="assets/dashboard.png" alt="Màn tổng quan: việc cần làm, số liệu tài sản" loading="lazy"><figcaption>Tổng quan</figcaption></figure>
+        <figure><img src="assets/layout-3d.png" alt="Bố trí phòng ở dạng 3D với mô hình máy tính" loading="lazy"><figcaption>Bố trí 3D</figcaption></figure>
+        <figure><img src="assets/layout-2d.png" alt="Mặt bằng 2D của phòng với vị trí tài sản" loading="lazy"><figcaption>Mặt bằng 2D</figcaption></figure>
+        <figure><img src="assets/stocktake.png" alt="Đợt kiểm kê với các dòng khớp và thiếu" loading="lazy"><figcaption>Kiểm kê</figcaption></figure>
+        <figure><img src="assets/offline.png" alt="Danh sách tài sản khi mất mạng với dải thông báo" loading="lazy"><figcaption>Khi mất mạng</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="tai-ve">
+      <h2>Tải về</h2>
+      <table>
+        <tr><th>Nền tảng</th><th>Tệp</th><th>Ghi chú</th></tr>
+        <tr><td>Android (điện thoại mới)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-android-arm64.apk">nexora-android-arm64.apk</a></td><td>Hầu hết điện thoại từ 2017 trở đi. Cho phép “cài ứng dụng không rõ nguồn” khi được hỏi.</td></tr>
+        <tr><td>Android (máy cũ, 32-bit)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-android-armv7.apk">nexora-android-armv7.apk</a></td><td>Nếu bản trên báo không tương thích.</td></tr>
+        <tr><td>Windows 10/11 (64-bit)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-windows-x64.zip">nexora-windows-x64.zip</a></td><td>Giải nén rồi chạy <code>nexora_app.exe</code>. Chưa ký mã nên Windows có thể cảnh báo SmartScreen.</td></tr>
+        <tr><td>Web</td><td>—</td><td>Chưa có bản web.</td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:14px">Kiểm tra tệp: mỗi bản phát hành kèm mã SHA-256 trong phần ghi chú phát hành.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">NEXORA · bản thử nghiệm · <a href="https://github.com/mittohoa/nexora-download/releases">Phát hành</a></footer>
+</body>
+</html>
