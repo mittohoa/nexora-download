@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NEXORA — Quản lý tài sản thông minh</title>
   <meta name="description" content="NEXORA: quản lý tài sản, vật tư, kiểm kê và bố trí 3D. Chạy cả khi mất mạng. Tải bản Android và Windows.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -27,7 +29,11 @@
     a { color: var(--brand); }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
     header { padding: 56px 0 32px; text-align: center; }
-    .logo { font-weight: 800; letter-spacing: .3em; font-size: clamp(36px, 8vw, 64px); color: var(--brand); margin: 0; }
+    .mark { width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0 auto 16px; box-shadow: 0 12px 40px rgba(79,70,229,.35); }
+    .logo { font-weight: 800; letter-spacing: .3em; font-size: clamp(36px, 8vw, 64px); color: var(--text); margin: 0; }
+    .logo span { color: #06b6d4; }
+    .news { background: var(--brand-soft); border-radius: 16px; padding: 18px 20px; }
+    .news ul { margin: 8px 0 0; padding-left: 20px; }
     .tag { color: var(--muted); margin: 4px 0 24px; }
     h1 { font-size: clamp(24px, 4.5vw, 38px); line-height: 1.25; margin: 0 0 12px; }
     .lead { color: var(--muted); max-width: 680px; margin: 0 auto 28px; }
@@ -57,7 +63,8 @@
 </head>
 <body>
   <header class="wrap">
-    <p class="logo">NEXORA</p>
+    <img class="mark" src="assets/icon-192.png" alt="" width="96" height="96">
+    <p class="logo" aria-label="NEXORA">NEXOR<span>Λ</span></p>
     <p class="tag">Intelligent Asset Ecosystem</p>
     <h1>Quản lý tài sản, vật tư và kiểm kê — cả khi mất mạng</h1>
     <p class="lead">Một ứng dụng cho cả văn phòng, kho và hiện trường: đăng ký tài sản bằng QR, phiếu cấp phát / điều chuyển có duyệt, tồn kho theo lô, kiểm kê bằng camera, thư viện mô hình 3D và bố trí phòng trên mặt bằng.</p>
@@ -66,10 +73,24 @@
       <a class="btn primary" href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-windows-x64.zip">⬇ Tải Windows</a>
       <a class="btn ghost" href="https://github.com/mittohoa/nexora-download/releases">Tất cả phiên bản</a>
     </div>
-    <p class="note">Bản thử nghiệm (beta). Cần tài khoản do tổ chức của bạn mời — ứng dụng không cho tự đăng ký.</p>
+    <p class="note">Bản thử nghiệm (beta) 0.2.0. Cần tài khoản do tổ chức của bạn mời — ứng dụng không cho tự đăng ký.</p>
   </header>
 
   <main class="wrap">
+    <section>
+      <div class="news">
+        <h2 style="margin:0">Có gì mới ở 0.2.0</h2>
+        <ul>
+          <li>Giao diện mới, gọn hơn: không còn thanh 8 mục. Màn chính là các thẻ việc cần làm hôm nay, ô <b>Tìm, quét hoặc gõ lệnh</b> (Ctrl+K trên Windows) và duyệt <b>Không gian</b> theo tòa → tầng → phòng.</li>
+          <li>Danh sách tài sản, phiếu, kho, kiểm kê dạng thẻ: chấm tình trạng, viền đỏ khi cần xử lý, thanh tiến độ kiểm kê, nút “Đã thấy” ngay trên thẻ.</li>
+          <li>Windows màn rộng: cây không gian bên trái, việc của bạn bên phải.</li>
+          <li>Logo và biểu tượng ứng dụng mới.</li>
+          <li>Sửa lỗi: số tài sản theo khu, phiếu kho hiện số dòng vật tư, danh sách “Tất cả” không còn lẫn tài sản đã thanh lý.</li>
+        </ul>
+        <p style="margin:10px 0 0;font-size:14px;color:var(--muted)"><b>Lưu ý Android:</b> mã ứng dụng đổi thành <code>com.mittohoa.nexora_app</code>, nên bản 0.2.0 cài thành ứng dụng mới. Nếu đã cài bản 0.1.0, hãy gỡ bản cũ và đăng nhập lại ở bản mới.</p>
+      </div>
+    </section>
+
     <section>
       <h2>Tính năng</h2>
       <div class="grid">
@@ -87,11 +108,13 @@
     <section>
       <h2>Hình ảnh</h2>
       <div class="shots">
-        <figure><img src="assets/dashboard.png" alt="Màn tổng quan: việc cần làm, số liệu tài sản" loading="lazy"><figcaption>Tổng quan</figcaption></figure>
+        <figure><img src="assets/hub.png" alt="Màn chính: thẻ việc hôm nay, ô tìm, quét hoặc gõ lệnh" loading="lazy"><figcaption>Hôm nay</figcaption></figure>
+        <figure><img src="assets/spaces.png" alt="Không gian: đường dẫn và các ô khu vực với số tài sản" loading="lazy"><figcaption>Không gian</figcaption></figure>
+        <figure><img src="assets/assets.png" alt="Danh sách tài sản dạng thẻ với chấm tình trạng" loading="lazy"><figcaption>Tài sản</figcaption></figure>
+        <figure><img src="assets/stock.png" alt="Vật tư; mục dưới mức tối thiểu có viền đỏ" loading="lazy"><figcaption>Kho</figcaption></figure>
+        <figure><img src="assets/stocktake-list.png" alt="Đợt kiểm kê với thanh tiến độ" loading="lazy"><figcaption>Kiểm kê</figcaption></figure>
         <figure><img src="assets/layout-3d.png" alt="Bố trí phòng ở dạng 3D với mô hình máy tính" loading="lazy"><figcaption>Bố trí 3D</figcaption></figure>
         <figure><img src="assets/layout-2d.png" alt="Mặt bằng 2D của phòng với vị trí tài sản" loading="lazy"><figcaption>Mặt bằng 2D</figcaption></figure>
-        <figure><img src="assets/stocktake.png" alt="Đợt kiểm kê với các dòng khớp và thiếu" loading="lazy"><figcaption>Kiểm kê</figcaption></figure>
-        <figure><img src="assets/offline.png" alt="Danh sách tài sản khi mất mạng với dải thông báo" loading="lazy"><figcaption>Khi mất mạng</figcaption></figure>
       </div>
     </section>
 
@@ -100,6 +123,7 @@
       <table>
         <tr><th>Nền tảng</th><th>Tệp</th><th>Ghi chú</th></tr>
         <tr><td>Android (điện thoại mới)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-android-arm64.apk">nexora-android-arm64.apk</a></td><td>Hầu hết điện thoại từ 2017 trở đi. Cho phép “cài ứng dụng không rõ nguồn” khi được hỏi.</td></tr>
+        <tr><td>Android (máy ảo / Chromebook x86)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-android-x86_64.apk">nexora-android-x86_64.apk</a></td><td>Cho trình giả lập và máy x86_64.</td></tr>
         <tr><td>Android (máy cũ, 32-bit)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-android-armv7.apk">nexora-android-armv7.apk</a></td><td>Nếu bản trên báo không tương thích.</td></tr>
         <tr><td>Windows 10/11 (64-bit)</td><td><a href="https://github.com/mittohoa/nexora-download/releases/latest/download/nexora-windows-x64.zip">nexora-windows-x64.zip</a></td><td>Giải nén rồi chạy <code>nexora_app.exe</code>. Chưa ký mã nên Windows có thể cảnh báo SmartScreen.</td></tr>
         <tr><td>Web</td><td>—</td><td>Chưa có bản web.</td></tr>
